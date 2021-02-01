@@ -1,0 +1,22 @@
+<nb-card>
+    <nb-card-header>Merge Dictionaries</nb-card-header>
+    <!-- <nb-card-body>{{ data }}</nb-card-body> -->
+    <nb-card-body>
+            Would you really want to merge next dictionaries?
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let dict of dicts;">{{dict.name}}</li>
+            </ul>
+            <label for="new-dict-name">Please, type a new name for the merged dictionary.</label>
+
+            <input type="text" id="new-dict-name" class="form-control" nbInput fullWidth 
+                status="primary" fieldSize="giant" [(ngModel)]="newDictName" placeholder="New Dictionare Name">
+            
+    </nb-card-body>
+    <nb-card-footer>
+      <div class="row justify-content-around">
+        <button nbButton (click)="close(false)" class="btn btn-danger">Cancel</button>
+        <button nbButton (click)="close(true)" class="btn btn-success" [attr.disabled]="newDictName === undefined || newDictName.length < 5? true: null">Merge!</button>
+      </div>
+      
+    </nb-card-footer>
+  </nb-card>

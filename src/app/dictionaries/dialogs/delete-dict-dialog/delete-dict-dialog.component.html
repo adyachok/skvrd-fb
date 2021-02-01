@@ -1,0 +1,16 @@
+<nb-card>
+  <nb-card-header>Delete Dictionary</nb-card-header>
+
+  <nb-card-body>
+    <p>Would you really want to delete dictionary?</p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{dict.name}}</li>
+    </ul>
+  </nb-card-body>
+  <nb-card-footer>
+    <div class="row justify-content-around">
+      <button nbButton (click)="close(false)" class="btn btn-success">Cancel</button>
+      <button nbButton (click)="close(true)" class="btn btn-danger">Delete!</button>
+    </div>
+  </nb-card-footer>
+</nb-card>

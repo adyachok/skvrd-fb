@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-header>Edit Dictionary</nb-card-header>
+    <nb-card-body>
+            <label for="dict-name">Dictionary Name</label>
+
+            <input type="text" id="dict-name" class="form-control" nbInput fullWidth 
+                status="primary" fieldSize="giant" [(ngModel)]="dict.name" value="dict.name">
+            
+    </nb-card-body>
+    <nb-card-footer>
+      <div class="row justify-content-around">
+        <button nbButton (click)="close(false)" class="btn btn-danger">Cancel</button>
+        <button nbButton (click)="close(true)" class="btn btn-success">Save</button>
+      </div>
+      
+    </nb-card-footer>
+  </nb-card>

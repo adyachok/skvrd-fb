@@ -1,0 +1,16 @@
+nb-card-body {
+    width: 35rem;
+}
+
+.translation {
+    margin: 2rem 0.5rem 0.5rem 0.5rem;
+}
+
+.translation input {
+    margin-bottom: 0.5rem;
+}
+
+nb-icon {
+    padding: 0.1rem;
+    font-size: 2rem;
+}

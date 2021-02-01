@@ -1,0 +1,26 @@
+<nb-card size="giant">
+  <nb-card-header>Edit Word</nb-card-header>
+  <nb-card-body>
+    <label for="foreign">Foreign Word</label>
+
+    <input type="text" id="foreign" class="form-control" nbInput fullWidth status="primary" fieldSize="giant"
+      [(ngModel)]="word.foreign" value="word.foreign">
+    <div class="translation">
+      <p>Translations:</p>
+      <div class="row justify-content-center" *ngFor="let translation of word.translations; let index = index">
+        <input  type="text" id="foreign"
+        class="form-control col-md-11" nbInput fullWidth status="primary" fieldSize="giant" [(ngModel)]="word.translations[index]"
+        value="translation">
+        <nb-icon icon="trash-2-outline" class="col-md-1" (click)="deleteTranslation($event, index)"></nb-icon>
+      </div>      
+    </div>
+
+  </nb-card-body>
+  <nb-card-footer>
+    <div class="row justify-content-around">
+      <button nbButton (click)="close(false)" class="btn btn-danger">Cancel</button>
+      <button nbButton (click)="close(true)" class="btn btn-success">Save</button>
+    </div>
+
+  </nb-card-footer>
+</nb-card>

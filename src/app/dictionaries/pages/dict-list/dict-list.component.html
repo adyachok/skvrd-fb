@@ -1,0 +1,40 @@
+<nb-card>
+    <nb-card-header>
+        Dictionaries
+    </nb-card-header>
+
+    <nb-card-body>
+        <div class="row justify-content-end">
+            <button nbButton (click)="merge($event)" [attr.disabled]="!ableMerge? true: null">Merge</button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Select</th>
+                        <th scope="col">Dictionary Name</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let dictionary of data; let i=index;">
+                        <th scope="row">{{i + 1}}</th>
+                        <th scope="row">
+                            <nb-checkbox [(ngModel)]="dictionary.checked" (ngModelChange)="toggle($event)">
+                            </nb-checkbox>
+                        </th>
+                        <th scope="row"><a href="/words">{{ dictionary.name }}</a></th>
+                        <th scope="row">
+                            <nb-icon icon="edit-outline" (click)="edit($event, dictionary.id)"></nb-icon>
+                            <nb-icon icon="trash-2-outline" (click)="delete($event, dictionary.id)"></nb-icon>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nb-card-body>
+    <nb-card-footer>
+    </nb-card-footer>
+</nb-card>

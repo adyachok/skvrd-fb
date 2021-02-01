@@ -1,0 +1,44 @@
+<nb-card>
+    <nb-card-header>
+        Words
+    </nb-card-header>
+
+    <nb-card-body>
+        <div class="row justify-content-end">
+            <button nbButton shape="rectangle" outline status="primary"  (click)="addWord($event)">Add New Word</button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Foreign</th>
+                        <th scope="col">Translation</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let word of words; let i=index;" id="i">
+                    <th scope="row">{{i + 1}}</th>
+                    <th scope="row">
+                        {{ word.foreign }}
+                    </th>
+                    <th scope="row">
+                        <ol>
+                            <li *ngFor="let translation of word.translations">{{translation}}</li>
+                        </ol>
+                    <th scope="row">
+                        <nb-icon icon="edit-outline" (click)="edit($event, i)"></nb-icon>
+                        <nb-icon icon="trash-2-outline" (click)="delete($event, i)"></nb-icon>
+                    </th>
+                </tr>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </nb-card-body>
+    <nb-card-footer>
+    </nb-card-footer>
+</nb-card>
+
