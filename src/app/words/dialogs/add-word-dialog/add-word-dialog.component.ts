@@ -40,6 +40,10 @@ export class AddWordDialogComponent implements OnInit {
     evt.target.hidden = true;
   }
 
+  trackByFn(index, item) {
+    return index;
+  }
+
   ngOnInit(): void {
   }
 

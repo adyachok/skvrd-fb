@@ -7,7 +7,7 @@
       [(ngModel)]="word.foreign" value="word.foreign">
     <div class="translation">
       <p>Translations:</p>
-      <div class="row justify-content-center" *ngFor="let translation of word.translations; let index = index">
+      <div class="row justify-content-center" *ngFor="let translation of word.translations; let index = index; trackBy: trackByFn">
         <input  type="text" id="foreign"
         class="form-control col-md-11" nbInput fullWidth status="primary" fieldSize="giant" [(ngModel)]="word.translations[index]"
         value="translation">

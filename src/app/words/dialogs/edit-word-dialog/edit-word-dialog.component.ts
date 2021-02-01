@@ -15,12 +15,17 @@ export class EditWordDialogComponent implements OnInit {
   constructor(protected dialogRef: NbDialogRef<EditWordDialogComponent>) { }
 
   close(save: boolean) {
-    this.dialogRef.close({save: save, editedWord: this.word});
+    this.dialogRef.close({ save: save, editedWord: this.word });
   }
 
   deleteTranslation(evt, index) {
     this.word.translations.splice(index, 1);
   }
+
+  trackByFn(index, item) {
+    return index;
+  }
+
 
   ngOnInit(): void {
   }
